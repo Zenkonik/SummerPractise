@@ -9,9 +9,6 @@ count = 500
 x = np.linspace(xmin, xmax, count)
 y = -np.cos(x) * np.cos(np.pi) * np.exp(-((x - np.pi)**2))
 
-plt.plot(x, y)
-plt.show()
-
 root = ET.Element("data")
 xdata = ET.SubElement(root, "xdata")
 for value in x:
@@ -25,3 +22,11 @@ for value in y:
 tree = ET.ElementTree(root)
 ET.indent(tree, space="    ", level=0)
 tree.write("results.xml", encoding="utf-8", xml_declaration=True)
+
+
+plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("График функции f(x)")
+plt.grid(True)
+plt.show()
