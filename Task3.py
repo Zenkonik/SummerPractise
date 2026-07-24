@@ -2,9 +2,11 @@ import argparse
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 
-read = argparse.ArgumentParser(description="Построение графика y=f(x) по данным из файла")
+read = argparse.ArgumentParser()
 
 read.add_argument("filename")
+
+read.add_argument("--no_grid", action="store_false")
 
 args = read.parse_args()
 
@@ -24,6 +26,7 @@ plt.plot(x, y)
 plt.title("y=f(x)")
 plt.xlabel("X")
 plt.ylabel("Y")
-plt.grid(True)
+
+plt.grid(args.no_grid)
 
 plt.show()
