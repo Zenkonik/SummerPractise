@@ -47,4 +47,22 @@ ax2.set_zticks([])
 ax2.set_title('Вид сверху')
 fig.colorbar(surf2, ax=ax2, shrink=0.6)
 
+#График y = f(x1) при x2 = x20
+y_line1 = f(x1_values, x20)
+ax3 = fig.add_subplot(2, 2, 3)
+ax3.plot(x1_values, y_line1)
+ax3.set_xlabel('x1')
+ax3.set_ylabel('y=f(x1, x2)')
+ax3.set_title(f'y = f(x1) при x2 = {x20}')
+ax3.grid(True)
+
+#График y = f(x2) при x1 = x10
+y_line2 = f(x10, x2_values)
+ax4 = fig.add_subplot(2, 2, 4)
+ax4.plot(x2_values, y_line2)
+ax4.set_xlabel('x2')
+ax4.set_ylabel('y=f(x1, x2)')
+ax4.set_title(f'y = f(x2) при x1 = {x10}')
+ax4.grid(True)
+
 plt.show()
